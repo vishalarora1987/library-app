@@ -22,7 +22,7 @@ cd library-app
 3. Next, install the application using (assuming you have required libraries installed)
 npm install
 
-4. We will use Expo to run the application on our devices. Please refer this link for installation https://docs.expo.io/get-started/installation/ and run follwing command
+4. We will use Expo to run the application on our devices. Please refer this link (or use npm install -g expo-cli command for installing expo cli) for installation https://docs.expo.io/get-started/installation/ and run following command
 
 expo start
 

@@ -13,8 +13,8 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {query: "", refreshing: false};
-    this.autoSearchThrottled = throttle(1000, this.autoSearch);
-    this.autoSearchDebounced = debounce(1000, this.autoSearch);
+    this.autoSearchThrottled = throttle(700, this.autoSearch);
+    this.autoSearchDebounced = debounce(700, this.autoSearch);
     this.autoSearchDebouncedForSmallWords = debounce(2000, this.autoSearch);
   }
 
@@ -129,8 +129,8 @@ class Home extends React.Component {
               extraData={this.state}
               renderItem={this.renderItem}
               // Combination of these will improve visual performance of your UX
-              initialNumToRender={20}
-              windowSize={41}
+              initialNumToRender={10}
+              windowSize={21}
               // Unique key for items in list
               keyExtractor={(item, index) => index.toString() + "_HomePage"}
               // Whether app is refreshing or not
@@ -140,7 +140,7 @@ class Home extends React.Component {
               // What happens when end of page is reached
               onEndReached={this.handleLoadMore}
               // After what threshold to trigger on End Reached
-              onEndReachedThreshold={0}
+              onEndReachedThreshold={0.3}
               // Attached the Search Header to our List
               ListHeaderComponent={this.renderHeader}
           />
